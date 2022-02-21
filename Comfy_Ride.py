@@ -4,14 +4,23 @@
 # 1. PLOTHOLE DETECTION( SENSORS PLANTED ON THE STRUCTURES ADJACENT TO THE FRONT WHEELS)
 # 2. ACTUATORS ( REACT AS PER THE READINGS FROM THE SENSOR READINGS)
 
-from plothole_detector import *
+import plothole_detector # Takes readings from Kinect and Lidar Sensor
 from comfy_actuators import actuatorPush, actuatorPull
 import NVH_values # for NVH and gyro values
 
 
+def flat_tire():
+    if(plothole_detected()):
+        return True
+    elif(AV_ride.buttonStatus(3)):
+        # 3rd button is for manual Flat Tire Notify
+        return True
+    else:
+        return False
+
 # Take readings from the plothole detector program
 
-initialize_pd() # initializes plothole detector
+plothole_detector.initialize_pd() # initializes plothole detector
 
 if(plothole_detected()):
     # check if we need to push or pull
@@ -23,8 +32,6 @@ if(plothole_detected()):
         else:
             actuatorPull(plothole_matrix(i))
 
-    # send them to the comfy_actuators
-retract() # retracts them after the plothole is gone... for all wheels
 
 if(NVH_values.flat_tire_detection()):
     mechcloud.summon(5) # Status code 5 for Flat Tires
