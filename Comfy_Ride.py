@@ -9,6 +9,7 @@ from comfy_actuators import actuatorPush, actuatorPull
 import NVH_values # for NVH and gyro values
 
 
+
 def flat_tire():
     if(plothole_detected()):
         return True
@@ -35,4 +36,6 @@ if(plothole_detected()):
 
 if(NVH_values.flat_tire_detection()):
     mechcloud.summon(5) # Status code 5 for Flat Tires
-
+def tire_check(a,b,c,d):
+    # check if the values are according to the trained model, else give error to show some faulty tire or flat tire
+    pass
