@@ -321,3 +321,8 @@ def summon(status_code):
 
 
 # update the Matrices
+
+
+def analyzeMat(priority_Mat,health_Mat,Mood_Mat,AV_Mat,Pass_Mat):
+    # the algorithm ...
+    pass
