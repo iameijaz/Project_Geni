@@ -9,6 +9,20 @@ REQUEST_LINK = "https://thingspeak.com/channels/" +THINGSPEAK_CHANNEL_NAME + "/f
 
 global cloud_data
 
+def getData(paramet):
+
+    if(paramet=="Priority_Matrix"):
+        return Priority_Matrix
+    elif(paramet=="Health_Matrix"):
+        return Health_Matrix
+    elif(paramet=="Mood_Matrix"):
+        return Mood_Matrix
+    elif(paramet=="AV_Matrix"):
+        return AV_Matrix
+    elif(paramet=="Passenger_Matrix"):
+        return Passenger_Matrix
+    else:
+        return 0
 
 def fetch_data():
     cloud_data=requests.get(REQUEST_LINK)
@@ -81,10 +95,14 @@ for i in range(0,256):
 #passenger_count=0
 
 # ~ 25 VALUES  5 ONWARDS... 5  TILL 5+24-> 28 ... SO 5 TO 29
-for k in range(0,5):
-    for p in range(0,5)
-    #Names
+for k in range(0,29):
     Passenger_Matrix[p]=fetch_data()
+    for p in range(k,k+5)
+    #Names
+        Passenger_Matrix[p]=fetch_data()
+        if(p==k+5):
+            Priority_Matrix[prioritycount]=Passenger_Matrix[p]
+            prioritycount+=1
 
     # 5 values... age, medical record, emergency contact, preferences
 
@@ -125,19 +143,6 @@ for k in range(0,5):
     
     '''
 
-
-
-
-
-    
-
-
-
-
-
-
-
-
 # Get status codes 
 # and Respond Accordingly
 
@@ -152,7 +157,7 @@ def summon(status_code):
     THIS WILL SEND A NOTIFICATION TO THE FAMILY FOR ALL OF THE 5 STATUS CODES HERE
 
     '''
-    mechcloud.notify(status_code,Passenger_Matrix)
+    AV_ride.notify(status_code,Passenger_Matrix)
 
     # Status_Code=1 
     if(status_code==1):
