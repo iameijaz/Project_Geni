@@ -20,4 +20,3 @@ pip install bleedfacedetector
 and then fork or download the files from the repository, and run the main.py file.
 
 
-
