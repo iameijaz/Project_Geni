@@ -13,7 +13,7 @@ priority_Mat=mechcloud.getData("Priority_Matrix")
 health_Mat=mechcloud.getData("Health_Matrix")
 Mood_Mat=mechcloud.getData("Mood_Matrix")
 AV_Mat=mechcloud.getData("AV_Matrix") # this includes Route, Battery, temperature etc
-Pref_Mat=mechcloud.getData("pref_Matrix")  # song preference etc if any
+Pas_Mat=mechcloud.getData("Passenger_Matrix")  # song preference etc if any
 
 # Optimize Temperature, Route, and Songs accordinly
 
