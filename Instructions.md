@@ -17,6 +17,6 @@ pip install matplotlib
 pip install bleedfacedetector
 ```
 
-and then fork or download the files from the repository, and run the main.py file.
+and then fork or download the files from the repository, and run the geni_AI.py file.
 
-
+*Note: This is a sample code, and still under development*
