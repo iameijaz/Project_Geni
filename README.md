@@ -78,3 +78,14 @@ This system works with the following things:
 - Algorithms to make a response to reduce the effect
 
 ------------------------
+
+# STATUS CODES:
+
+*Note: for all of these, notifications are sent to respective guardian or family members*
+
+These are the status codes that will be used by MechCloud to take decisions:
+- 5 : flat tires -> to call an AV expert
+- 4 : battery isseus -> to call an AV expert
+- 3 : Critical Health -> Summon Ambulance+Contact Medical Experts
+- 2 : Safety Belt & SOPs-> Alarm
+- 1 : Kids+Peeking Window -> Alarm 
