@@ -22,7 +22,7 @@ mechcloud.analyzeMat(priority_Mat,health_Mat,Mood_Mat,AV_Mat,Pref_Mat)
 
 #bad mood 
 
-if(mechCloud.badMood(Mood_Mat)):
+if(mechcloud.badMood(Mood_Mat)):
     Mood2Songs.update(Mood_Mat)
 
 
